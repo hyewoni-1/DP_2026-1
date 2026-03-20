@@ -15,7 +15,7 @@ public class BookShelf implements Iterable<Book> {
     }
 
     public void appendBook(Book book) { //책꽂이에 책을 꽂는다.
-        this.books[last] = book; 
+        this.books[last] = book; //추가
         last++;
     }
 
