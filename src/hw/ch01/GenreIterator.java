@@ -18,14 +18,14 @@ public class GenreIterator implements Iterator<Book> {
     public boolean hasNext() {
         // 3. 배열 범위 내에 있고, 책이 존재하는 동안 반복
         while (currentIndex < books.length && books[currentIndex] != null) {
-            // 현재 인덱스의 책 장르가 우리가 찾는 장르와 일치하면 탐색 성공!
+            // 현재 인덱스의 책 장르가 우리가 찾는 장르와 일치하면 탐색 성공
             if (books[currentIndex].getGenre().equals(targetGenre)) {
                 return true;
             }
             // 일치하지 않으면 건너뛰고 다음 책을 확인
             currentIndex++; 
         }
-        // 끝까지 찾아봤는데 없으면 false 반환
+
         return false; 
     }
 
@@ -34,7 +34,7 @@ public class GenreIterator implements Iterator<Book> {
         if (!hasNext()) {
             throw new NoSuchElementException();
         }
-        // hasNext()에서 찾아둔 일치하는 책을 꺼내고, 인덱스를 다음으로 넘김
+        // hasNext()에서 찾아둔 일치하는 책을 꺼내고 인덱스를 다음으로 넘김
         Book book = books[currentIndex];
         currentIndex++;
         return book;

@@ -30,12 +30,10 @@ public class BookShelf implements Iterable<Book> {
     }
 
     // 2. 장르별 Iterator를 반환하는 새로운 메서드 
-    // 매개변수로 어떤 장르(genre)를 찾을지 입력받는다.
     public Iterator<Book> iteratorByGenre(String genre) {
-        // 우리가 직전에 수정한 GenreIterator 생성자에 맞게 책 배열과 장르를 함께 넘겨줍니다.
+  
         return new GenreIterator(this.books, genre);
     }
-// BookShelf.java 클래스 내부의 맨 아래 쪽에 추가합니다.
 
     // 3. 출판연도 역순 Iterator를 반환하는 메서드
     public Iterator<Book> iteratorByYear() {
