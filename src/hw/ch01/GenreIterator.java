@@ -16,7 +16,7 @@ public class GenreIterator implements Iterator<Book> {
 
     @Override
     public boolean hasNext() {
-        // 3. 배열 범위 내에 있고, 책이 존재하는 동안 반복
+        // 3. 배열 범위 내에서  책이 존재하는 동안 반복
         while (currentIndex < books.length && books[currentIndex] != null) {
             // 현재 인덱스의 책 장르가 우리가 찾는 장르와 일치하면 탐색 성공
             if (books[currentIndex].getGenre().equals(targetGenre)) {

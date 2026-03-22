@@ -1,0 +1,8 @@
+#written by FileProperties
+#Sun Mar 22 22:11:33 KST 2026
+depth=32
+height=512
+weigh=65
+width=1024
+키=밸류
+프로퍼티=값

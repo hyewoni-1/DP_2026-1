@@ -20,7 +20,9 @@ public class PrintBannerAdapter02 extends Print { // 추상클래스 이미로 i
         banner.showWithAster();
     }
  
-
+    public String getyourname() {
+        return "내이름";
+    }
 
 
 }  

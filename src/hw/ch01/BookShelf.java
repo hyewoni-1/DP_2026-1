@@ -36,7 +36,9 @@ public class BookShelf implements Iterable<Book> {
     }
 
     // 3. 출판연도 역순 Iterator를 반환하는 메서드
-    public Iterator<Book> iteratorByYear() {
-        return new YearIterator(this.books);
-    }
+
+public Iterator<Book> iteratorByYear(String genre) {
+    return new YearIterator(this.books, genre);
+}
+
 }

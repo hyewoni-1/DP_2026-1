@@ -17,12 +17,12 @@ public class Main {
         bookShelf.appendBook(new Book("어린왕자","소설",1943, 9000.0));
 
         // 명시적으로 Iterator를 사용하는 방법 
-        Iterator<Book> it = bookShelf.iterator();
-        while (it.hasNext()) {
-            Book book = it.next();
-            System.out.println(book.getName());
-        }
-        System.out.println();
+        // Iterator<Book> it = bookShelf.iterator();
+        // while (it.hasNext()) {
+        //     Book book = it.next();
+        //     System.out.println(book.getName());
+        // }
+        // System.out.println();
 
       
 
@@ -38,20 +38,23 @@ public class Main {
                                ", 가격: " + (int)book.getPrice() + "원");
         }
         System.out.println(); 
+        System.out.println();
 
 
-        System.out.println("=== [4-3] 출판연도 역순 Iterator 테스트 ===");
-  
-        Iterator<Book> yearIt = bookShelf.iteratorByYear();
-        while (yearIt.hasNext()) {
-            Book book = yearIt.next();
-            System.out.println("제목: " + book.getName() + 
+        System.out.println("=== [4-3] 출판연도 역순 Iterator 테스트 (소설 한정) ===");
+        Iterator<Book> novelYearIt = bookShelf.iteratorByYear("소설"); // "소설" 입력
+        while (novelYearIt.hasNext()) {
+             Book book = novelYearIt.next();
+                System.out.println("제목: " + book.getName() + 
                                ", 장르: " + book.getGenre() + 
                                ", 출판년도: " + book.getYear() + "년" + 
                                ", 가격: " + (int)book.getPrice() + "원");
-        }
+}
+
+
+
         System.out.println(); 
-   
+
 
     }
 }
