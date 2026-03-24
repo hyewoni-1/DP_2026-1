@@ -2,7 +2,7 @@ package hw.ch02;
 
 public class Main {
     public static void main(String[] args) {
-        // 한국 콘센트 Adapter로 충전
+
         
         // KoreanOutletAdapter 생성
         Charger adapter = new KoreanOutletAdapter(); 
