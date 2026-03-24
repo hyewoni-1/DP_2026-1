@@ -11,8 +11,8 @@ public class StringDisplay extends AbstractDisplay {
         this.width = string.length();
     }
 
-    public StringDisplay(String string, int num) {
-        super(num);
+    public StringDisplay(String string, int repeatCount) {
+        super(repeatCount);
         this.string = string;
         this.width = string.length();
         

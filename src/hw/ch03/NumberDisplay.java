@@ -13,7 +13,7 @@ public class NumberDisplay extends AbstractDisplay{
     public void open() {
         //  "<<Number>>"를 출력한다
         System.out.print("<<Number>>\n");
-       
+        
     }
 
     @Override

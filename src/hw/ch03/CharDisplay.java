@@ -8,8 +8,8 @@ public class CharDisplay extends AbstractDisplay {
         this.ch = ch;
     }
 
-    public CharDisplay(char ch, int num) {
-        super(num);
+    public CharDisplay(char ch, int repeatCount) {
+        super(repeatCount);
         this.ch = ch;
     }
 

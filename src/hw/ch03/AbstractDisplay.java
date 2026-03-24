@@ -9,12 +9,12 @@ public abstract class AbstractDisplay {
         this.repeatCount = 5;
     }
 
-    //생성자에서 반복 횟수를 인자로 받도록 확장
+    //생성자에서 반복 횟수를 인자로 받도록 설계
     public AbstractDisplay(int repeatCount) {
         this.repeatCount = repeatCount;
     }
 
-    public abstract void open();
+    public abstract void open(); 
     public abstract void print();
     public abstract void close();
 
