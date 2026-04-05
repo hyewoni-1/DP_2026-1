@@ -3,7 +3,7 @@ package hw.ch04;
 import hw.ch04.framework.Factory;
 import hw.ch04.framework.Product;
 import hw.ch04.idcard.IDCardFactory;
-import hw.ch04.licensedcard.LicenseCardFactory;
+import hw.ch04.licensecard.LicenseCardFactory;
 
 
 public class Main {
