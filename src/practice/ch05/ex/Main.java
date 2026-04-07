@@ -2,10 +2,10 @@ package practice.ch05.ex;
 
 public class Main extends Thread{
     public static void main(String[] args) {
-        //스레드를 2개 만듦
+        //스레드를 3개 만듦
         Thread a = new Main("Tread A");
-        Thread b = new Main("Treas B");
-        Thread c = new Main("Treas C");
+        Thread b = new Main("Tread B");
+        Thread c = new Main("Tread C");
         
         
 

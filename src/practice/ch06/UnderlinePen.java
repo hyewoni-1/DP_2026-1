@@ -1,6 +1,6 @@
 package practice.ch06;
 
-import ch06.Sample.framework.Product;
+import practice.ch06.framework.Product;
 
 public class UnderlinePen implements Product {
     private char ulchar;
@@ -23,7 +23,7 @@ public class UnderlinePen implements Product {
     public Product createCopy() {
         Product p = null;
         try {
-            p = (Product)clone();
+            p = (Product)clone(); //자기 복제
         } catch (CloneNotSupportedException e) {
             e.printStackTrace();
         }
