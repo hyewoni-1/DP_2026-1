@@ -35,7 +35,7 @@ public abstract class Entry {
         do {
             fullname.insert(0, entry.getName());
             fullname.insert(0, "/");
-            entry = entry.parent;
+            entry = entry.parent; //부모로 이동
         } while (entry != null);
         return fullname.toString();
     }
