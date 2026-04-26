@@ -1,7 +1,7 @@
 package hw.ch10;
 
 public class CyclicStrategy implements Strategy {
-    private int currentHandValue = 0; // 0(바위)부터 시작 [cite: 19]
+    private int currentHandValue = 0; // 0(바위)부터 시작 
 
     @Override
     public Hand nextHand() {
