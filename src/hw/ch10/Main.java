@@ -1,5 +1,5 @@
 package hw.ch10;
-//study\SW\DP_2026-1\bin> java ch10.Sample.Main 111 222(arge 값(랜던 시드 ))
+
 
 public class Main {
     public static void main(String[] args) {
@@ -17,6 +17,8 @@ public class Main {
         Player player1 = new Player("Taro", new RandomStrategy(0)); 
         System.out.println("\n===== CyclicStrategy =====");
         Player player2 = new Player("Bob", new CyclicStrategy());
+
+        
 
         System.out.println("CyclicStrategy 의 손가락 순환:");
         Strategy cyclic = new CyclicStrategy();
