@@ -4,7 +4,7 @@ public class StringDisplay extends Display {
     private String string; // 표시 문자열 
 
     public StringDisplay(String string) {
-        this.string = string;
+        this.string = string; 
     }
 
     @Override
