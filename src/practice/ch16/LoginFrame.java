@@ -82,10 +82,10 @@ public class LoginFrame extends Frame implements ActionListener, Mediator {  //-
         buttonCancel.addActionListener(this);
     }
 
-    // Colleage의 상태가 바뀌면 호출된다
+    // Colleage의 상태가 바뀌면 호출된다 //상태 변화 로직
     @Override //핵심~이게 제일 중요해!!
     public void colleagueChanged() {
-        if (checkGuest.getState()) { //true이면 (게스트 로그인이면), ,, 
+        if (checkGuest.getState()) { //true이면 (게스트 로그인이면),,, 
             // 게스트 로그인 
             textUser.setColleagueEnabled(false); //textuser는 비활성화 
             textPass.setColleagueEnabled(false);

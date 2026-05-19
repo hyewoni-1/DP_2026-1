@@ -13,8 +13,8 @@ import java.awt.event.ActionListener;
 public class FrameObserver extends Frame implements Observer, ActionListener {
     // GraphText는 통지된 수를 텍스트 필드로 표시하는 static 클래스 
     static class GraphText extends TextField implements Observer {
-        public GraphText(int columns) {
-            super(columns);
+        public GraphText(int columns) {         
+            super(columns); //부모생성자 호출
         }
 
         @Override
@@ -38,13 +38,17 @@ public class FrameObserver extends Frame implements Observer, ActionListener {
             repaint();
         }
 
-        public void paint(Graphics g) {
+        public void paint(Graphics g) { //캔버스 그림, 그래픽스 객체를 인자로 받아서 그림을 그리는 메소드
             int width = getWidth();
             int height = getHeight();
+
+            //흰 원을 그림
             g.setColor(Color.white);
-            g.fillArc(0, 0, width, height, 0, 360);
+            g.fillArc(0, 0, width, height, 0, 360); //원을 그리는 방법
+
+            //빨간 원호를 그림
             g.setColor(Color.red);
-            g.fillArc(0, 0, width, height, 90, - number * 360 / 50);
+            g.fillArc(0, 0, width, height, 90, - number * 360 / 50);// 시계방향으로 ~
         }
     }
 
@@ -61,7 +65,9 @@ public class FrameObserver extends Frame implements Observer, ActionListener {
         add(textGraph, BorderLayout.NORTH);
         add(canvasGraph, BorderLayout.CENTER);
         add(buttonClose, BorderLayout.SOUTH);
+        
         buttonClose.addActionListener(this);
+
         pack();
         setVisible(true);
     }
