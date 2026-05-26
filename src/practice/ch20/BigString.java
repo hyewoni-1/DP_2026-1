@@ -5,9 +5,11 @@ public class BigString {
     private BigChar[] bigchars;
 
     // 생성자 
-    public BigString(String string) {
+    public BigString(String string) {// "1212123"
         BigCharFactory factory = BigCharFactory.getInstance();
+
         bigchars = new BigChar[string.length()];
+
         for (int i = 0; i < bigchars.length; i++) {
             bigchars[i] = factory.getBigChar(string.charAt(i));
         }

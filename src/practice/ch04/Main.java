@@ -10,7 +10,7 @@ public class Main{
         //c.use();
 
         //공장을 통해서 id  카드를 만들어보자
-        IDCardFactory f= new IDCardFactory();5
+        IDCardFactory f= new IDCardFactory();
         Product c = f.create("임혜원"); //자식객제인 IDCard c = f.create("임혜원"); IDCard로 받으려고 하면, 오류낭.
          //아이디 c 로 하면 오류나, 왜??? idcardfactory에서 프로덕트를 리턴하니까 
         c.use(); //타입을 잘 맞춰야해.

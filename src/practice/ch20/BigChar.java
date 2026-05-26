@@ -16,7 +16,7 @@ public class BigChar {
         try {
             String filename = "big" + charname + ".txt"; // "big3.txt"
             StringBuilder sb = new StringBuilder();
-            for (String line: Files.readAllLines(Path.of(filename))) {
+            for (String line: Files.readAllLines(Path.of(filename))) {//이 경로에 있는 텍스트를 한줄씩 읽어서 리스트를 만들어준다. 그리고 그 리스트에서 한 줄씩 읽어서 sb에 추가한다.
                 sb.append(line);
                 sb.append("\n");
             }
