@@ -5,13 +5,13 @@ import java.util.Deque;
 
 public class MacroCommand implements Command {
     // 명령의 배열 
-    private Deque<Command> commands = new ArrayDeque<>();
+    private Deque<Command> commands = new ArrayDeque<>();//어레이덱
 
     // 실행 
     @Override
     public void execute() {
         for (Command cmd: commands) {
-            cmd.execute();
+            cmd.execute(); //리커시브호출 
         }
     }
 
@@ -26,7 +26,7 @@ public class MacroCommand implements Command {
     // 마지막 명령을 삭제
     public void undo() {
         if (!commands.isEmpty()) {
-            commands.pop();
+            commands.pop(); //나중에 들어온 명령을 꺼내라.
         }
     }
 
