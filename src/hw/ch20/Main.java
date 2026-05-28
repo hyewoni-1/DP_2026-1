@@ -4,8 +4,6 @@ package hw.ch20;
 
 public class Main {
 
-
-    
 static final String RED     = "\u001B[31m";
 static final String GREEN   = "\u001B[32m";
 static final String YELLOW  = "\u001B[33m";
@@ -31,4 +29,5 @@ static final String RESET   = "\u001B[0m";
         
         }
     }
+
 //C:\study\SW\DP_2026-1\src\hw\ch20> java hw.ch20.Main 1212123

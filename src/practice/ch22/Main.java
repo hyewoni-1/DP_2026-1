@@ -8,8 +8,8 @@ import java.awt.event.*;
 import javax.swing.*;
 
 // Main 자체가 하나의 윈도우가 된다           //마우스 움직이는거 버튼누른상태,안누른상태//윈도우 _ㅁx 나 확대 축소,, 감지
-public class Main extends JFrame implements MouseMotionListener, WindowListener {
-    // 그리기 이력 
+public class Main extends JFrame implements MouseMotionListener, WindowListener {   //다중상속안돼서 인터페이스로 구현
+    // 그리기 이력   
     private MacroCommand history = new MacroCommand();
     // 그리는 영역 
     private DrawCanvas canvas = new DrawCanvas(400, 400, history);
@@ -52,10 +52,11 @@ public class Main extends JFrame implements MouseMotionListener, WindowListener 
         System.out.println("mouseMoved: " + e.getPoint()); //마우스의 좌표가 터미널에 께속 찍한다
     }
 
-    @Override //핵심 드래그될떄!  커맨드 패턴의 핵심
+    @Override //커맨드 패턴의 핵심 드래그될떄!  커맨드 패턴의 핵심
     public void mouseDragged(MouseEvent e) {
         System.out.println("mouseDragged: " + e.getPoint());
-        Command cmd = new DrawCommand(canvas, e.getPoint()); //명령어 객체가 생성됨. 
+
+        Command cmd = new DrawCommand(canvas, e.getPoint()); //명령어 객체가 생성됨.
         history.append(cmd);//명령어 객체를 이력에 추가함
         cmd.execute(); //명령어 객체를 실행함
     }
@@ -63,7 +64,11 @@ public class Main extends JFrame implements MouseMotionListener, WindowListener 
     // WindowListener용 
     @Override
     public void windowClosing(WindowEvent e) {
-        System.exit(0);//x누르면 종료되는 이유
+        System.exit(0);//x누르면 종료되는 이유 
+        //위의 코드없어도 x누르면 종료되긴하는데? ,, 프로그램이 완전히 종료되는게 아니라 창만 닫히는거라서, 창이 닫히면 프로그램도 종료되도록 하는 코드가 필요하다.
+       //저거 없으면 그냥 윈도우만 사라지는것
+       
+        System.out.println("windowClosing");
     }
 
     @Override public void windowActivated(WindowEvent e) {}

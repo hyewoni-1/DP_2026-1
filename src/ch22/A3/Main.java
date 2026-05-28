@@ -7,7 +7,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class Main extends JFrame {
+public class Main extends JFrame { 
     // 그리기 이력
     private MacroCommand history = new MacroCommand();
     // 그리는 영역 
@@ -19,13 +19,13 @@ public class Main extends JFrame {
     public Main(String title) {
         super(title);
 
-        this.addWindowListener(new WindowAdapter() {
+        this.addWindowListener(new WindowAdapter() { //원도우 리스너 달아주기 리스너 클래스 만들필요없이 익명의 내부클래스로 구현
             public void windowClosing(WindowEvent e) {
                 System.exit(0);
             }
         });
 
-        canvas.addMouseMotionListener(new MouseMotionAdapter() {
+        canvas.addMouseMotionListener(new MouseMotionAdapter() { //재정의
             public void mouseDragged(MouseEvent e) {
                 Command cmd = new DrawCommand(canvas, e.getPoint());
                 history.append(cmd);
@@ -34,8 +34,8 @@ public class Main extends JFrame {
         });
 
         clearButton.addActionListener(e -> {
-            history.clear();
-            canvas.repaint();
+            history.clear(); //최근 명령 객체 삭체
+            canvas.repaint(); //다시 그림
         });
 
         Box buttonBox = new Box(BoxLayout.X_AXIS);

@@ -1,7 +1,8 @@
-package ch22.A1;
+package hw.ch22;
+//undo 버튼 누르니까 그려있던 색이 변함
 
-import ch22.A1.command.*;
-import ch22.A1.drawer.*;
+import hw.ch22.command.*;
+import hw.ch22.drawer.*;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -21,6 +22,9 @@ public class Main extends JFrame implements MouseMotionListener, WindowListener 
     // 파란 버튼
     private JButton blueButton  = new JButton("blue");
 
+    private JButton undoButton  = new JButton("undo");
+    private JButton redoButton  = new JButton("redo");
+
     // 생성자 
     public Main(String title) {
         super(title);
@@ -32,9 +36,17 @@ public class Main extends JFrame implements MouseMotionListener, WindowListener 
             canvas.init();
             canvas.repaint();
         });
-        redButton.addActionListener(e -> {  //버튼 누르면 색깔 바뀌는거 컬러커맨드객체생성
+         undoButton.addActionListener(e -> {
+            history.undo();
+            canvas.repaint();
+        });
+        redoButton.addActionListener(e -> {
+            history.redo(); 
+            canvas.repaint();
+        });
+        redButton.addActionListener(e -> {  //버튼 누르면 색깔 바뀌는버튼 컬러커맨드객체생성
             Command cmd = new ColorCommand(canvas, Color.red);
-            history.append(cmd); //이력에추가, 색이 바뀐것도 객체회되어 저장되는것
+            history.append(cmd); //이력에추가, 색이 바뀐것도 객체화되어 저장되는것
             cmd.execute(); //컬러커맨드실행
         });
         greenButton.addActionListener(e -> {
@@ -53,6 +65,8 @@ public class Main extends JFrame implements MouseMotionListener, WindowListener 
         buttonBox.add(redButton);
         buttonBox.add(greenButton);
         buttonBox.add(blueButton);
+        buttonBox.add(undoButton);
+        buttonBox.add(redoButton);
         Box mainBox = new Box(BoxLayout.Y_AXIS);
         mainBox.add(buttonBox);
         mainBox.add(canvas);

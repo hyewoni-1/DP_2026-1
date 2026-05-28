@@ -31,6 +31,7 @@ public class BigChar {
     public void print() {
         System.out.print(fontdata);
     }
+    
     public void print(String colorCode) {
         String[] lines = fontdata.split("\n");
         
